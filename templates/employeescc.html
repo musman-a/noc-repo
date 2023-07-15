@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+
+
+
+<div class="text-center mb-4">
+    <h1 style="font-family:verdana;" class="mb-4"><b>Department of Cloud Complaints</b></h1>
+  
+   
+   
+
+
+</div>
+<table class="table table-striped ">
+  <thead>
+    <tr>
+      <th >Token ID</th>
+      <th scope="col">Client Name</th>
+      <th scope="col">Type of Complaint</th>
+      <th scope="col">Complaint Level</th>
+      <th scope="col">Status</th>
+      <th scope="col">Date</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+     {% for Cccomplaints in ccrecord %}
+    <tr>
+      <td>{{Cccomplaints.tokenid}}</td>
+      <td>{{Cccomplaints.clientname}}</td>
+      <td>{{Cccomplaints.typeofcomplaint}}</td>
+      <td>{{Cccomplaints.complaintlevel}}</td>
+      <td>{{Cccomplaints.status}}</td>
+      <td>{{Cccomplaints.date}}</td>
+      <td><form name= "Deleteform" action = "" method= "">
+        {% csrf_token %}
+        <a  href = "employeescc/{{Cccomplaints.tokenid}}" button type="button" class= "btn  btn-sm text-white" style="background-color:hsla(0, 100%, 0%, 0.8);">Delete</a>
+    </form>
+</td>
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

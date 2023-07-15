@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+<div class="text-right mb-4">
+  {% if user.is_authenticated %}
+  
+<a href="/logout" type="button" class="btn btn-light btn-sm" style="font-family:verdana;">Mr {{request.user}}</a>
+{% endif %}
+<h1 class="text-center" style="font-family:verdana;"><b>Department of Activation & Configuration-Sonic Fiber/GPON Customer </b></h1>
+
+
+
+
+
+
+
+
+<table class="table table-striped ">
+    <thead>
+      <tr>
+        <th >Token ID</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Type of Complaint</th>
+        <th scope="col">Complaint Level</th>
+        <th scope="col">Status</th>
+        <th scope="col">Date</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+       {% for Acscomplaints in acsrecord %}
+      <tr>
+        <td>{{Acscomplaints.tokenid}}</td>
+        <td>{{Acscomplaints.clientname}}</td>
+        <td>{{Acscomplaints.typeofcomplaint}}</td>
+        <td>{{Acscomplaints.complaintlevel}}</td>
+        <td>{{Acscomplaints.status}}</td>
+        <td>{{Acscomplaints.date}}</td>
+        
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+
+  
+
+  </table>
+
+
+
+
+
+
+
+{% endblock body %}

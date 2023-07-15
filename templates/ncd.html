@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+<div class="text-right mb-4">
+  {% if user.is_authenticated %}
+  
+<a href="/logout" type="button" class="btn btn-light btn-sm" style="font-family:verdana;">Mr {{request.user}}</a>
+{% endif %}
+<h1 class="text-center" style="font-family:verdana;"><b>IP and Core Networking</b></h1>
+<h3 class="text-center" style="font-family:verdana;">Network Complaints & Deployments (Corporate/Local Customers-including IP and P2P)</h3>
+
+
+
+
+
+<table class="table table-striped ">
+    <thead>
+      <tr>
+        <th>Token ID</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Type of Complaint</th>
+        <th scope="col">Complaint Level</th>
+        <th scope="col">Status</th>
+        <th scope="col">Date</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+       {% for Ncdcomplaints in ncdrecord %}
+      <tr>
+        <td>{{Ncdcomplaints.tokenid}}</td>
+        <td>{{Ncdcomplaints.clientname}}</td>
+        <td>{{Ncdcomplaints.typeofcomplaint}}</td>
+        <td>{{Ncdcomplaints.complaintlevel}}</td>
+        <td>{{Ncdcomplaints.status}}</td>
+        <td>{{Ncdcomplaints.date}}</td>
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+
+  
+
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

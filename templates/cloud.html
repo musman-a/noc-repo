@@ -1,0 +1,94 @@
+{% extends 'index.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+<div class=" text-center text-white" style="background-color:hsla(0, 100%, 0%, 0.8);">
+  <h5 style="font-family:verdana;" class="text-white">Total Complaints</h5>
+  {% for Cccomplaints in ccrecord %}
+  <b>{{Cccomplaints.tokenid}}</b>{% endfor %}
+</div>
+
+<div class="container mb-3 py-4">
+    <h1 class="text-center" style="font-family:verdana;" ><b>Cloud Complaints Registered</b></h1>
+    
+    <form method="post" action="/cloud">
+        
+          {% csrf_token %}
+          
+          <div class="form-group">
+            <label for="tokenid">Token ID</label>
+            <input type="text" class="form-control" id="tokenid" name="tokenid" placeholder="Enter Token ID">
+        </div>
+
+
+          <div class="form-group">
+            <label for="clientname">Client Name</label>
+            <input type="text" class="form-control" id="clientname" name="clientname" placeholder="Enter Your Name">
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="typeofcomplaint">Type of Complaint</label>
+          <input type="text" class="form-control" id="typeofcomplaint" name="typeofcomplaint" placeholder="Enter Your Name">
+      </div>
+
+        
+
+          <div class = "form-group">
+            <label>Complaint Level</label>
+            <select name="complaintlevel" class="form-control" >
+                <option selected>Select</option>
+                <option value="L1">L1</option>
+                {% if data.complaintlevel == "L2" %}
+                <option value="L2" selected>L2</option>
+                {% else %}
+                <option value="L2">L2</option>
+                {% endif %}
+
+                {% if data.complaintlevel == "L3" %}
+                <option value="L3" selected>L3</option>
+                {% else %}
+                <option value="L3">L3</option>
+                {% endif %}
+
+
+              </select>
+          </div>
+      
+        <div class = "form-group">
+            <label>Status</label>
+            <select name="status" class="form-control" >
+              
+                <option value="Pending">Pending</option>
+                
+               
+              </select>
+          </div>
+        
+    
+        
+        <button class="btn btn-success my-3" type="submit">Submit</button>
+    </form>
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

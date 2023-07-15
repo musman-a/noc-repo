@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+<div class="container mb-3 py-4">
+    <h1 class="text-center" style="font-family:verdana;" ><b>Employees Registration</b></h1>
+    
+    <form method="post" action="/empregistration">
+        
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Username">
+        </div>
+      
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+            </div>
+
+            
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+            </div> 
+    
+            
+    
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Your password">
+            </div> 
+
+
+
+            <div class = "form-group">
+                <label>Select Department</label>
+                    <select name = "selectclass" class="form-control" >
+                        <option selected>Select</option>
+                        <option value="Master">IP and Core Networking</option>
+                        {% if data.selectclass == "Intermediate" %}
+                        <option value="Intermediate" selected>System/Email/App Hosting/Web Hosting</option>
+                        {% else %}
+                        <option value="Intermediate">System/Email/App Hosting/Web Hosting</option>
+                        {% endif %}
+        
+                        {% if data.selectclass == "Bachelor" %}
+                        <option value="Bachelor" selected>Cloud Complaints</option>
+                        {% else %}
+                        <option value="Bachelor">Cloud Complaints</option>
+                        {% endif %}
+                    
+
+                      {% if data.selectclass == "Bachelor" %}
+                      <option value="Bachelor" selected>Activation & Configuration-Sonic Fiber/GPON Customer</option>
+                      {% else %}
+                      <option value="Bachelor">Activation & Configuration-Sonic Fiber/GPON Customer</option>
+                      {% endif %}
+                  
+
+                    {% if data.selectclass == "Bachelor" %}
+                    <option value="Bachelor" selected>Solution/Quotation-IBU & Corporate Customers</option>
+                    {% else %}
+                    <option value="Bachelor">Solution/Quotation-IBU & Corporate Customers</option>
+                    {% endif %}
+                
+
+                  {% if data.selectclass == "Bachelor" %}
+                  <option value="Bachelor" selected>Engineer</option>
+                  {% else %}
+                  <option value="Bachelor">Engineer</option>
+                  {% endif %}
+                </select>
+            </div>
+            
+
+
+
+          
+            
+            <button class="btn btn-success my-3" type="submit">Create account</button>
+        </form>
+      
+      </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

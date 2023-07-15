@@ -1,0 +1,335 @@
+{% extends 'index.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+
+<div class="text-right">
+
+<a href="/logout" type="button" class="btn btn-light btn-sm">Logout</a>
+</div>
+{% if user.is_authenticated %}
+
+<h1 class="text-center mb-2" style="font-family:verdana;"><b>Welcome to Mr {{request.user}}</b></h1>
+{% endif %}
+<div class= "container text-center py-1">
+  <h2 class="mb-4" style="font-family:verdana;">Registered Complaints</h2>
+<a href="/ipregistrationcomplaint" type="button" class="btn btn-sq-responsive text-white " style="background-color:DodgerBlue; "><h5 class="my-4 py-4 text-white" style="font-family:verdana; font-size:100%;">IP and Core Networking </h5></a>
+
+<style>
+  @media (max-width:3920px) {
+      .btn-sq-responsive {
+      width: 200px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 200px !important;
+      font-size:24px;
+      }
+      }
+      
+      /* Style for Large Screen */
+      @media (max-width:991px) {
+      .btn-sq-responsive {
+      width: 150px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 150px !important;
+      font-size:18px;
+      }
+      }
+      
+      /* Style for Medium Screen */
+      @media (max-width:767px) {
+      .btn-sq-responsive {
+      width: 100px !important; /* whatever width you want for medium screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 100px !important; /* whatever height you want for medium screen */
+      font-size:12px;
+      }
+      }
+      
+      /* Style for Small Screen */
+      @media (max-width:575px) {
+      .btn-sq-responsive {
+      width: 50px !important; /* whatever width you want for mobile screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 50px !important; /* whatever height you want for mobile screen */
+      font-size:5px;
+      padding: 0px;
+      font-size:7px;
+      }
+      }
+
+
+</style>
+
+<a href="/sea" type="button" class="btn  btn-sq-responsive text-white" style="background-color:Orange;"><h5 class=" my-4  text-white" style="font-family:verdana; font-size:100%;">System/ Email App Hosting/Web Hosting</h5></a>
+<style>
+  @media (max-width:3920px) {
+      .btn-sq-responsive {
+      width: 200px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 200px !important;
+      font-size:24px;
+      }
+      }
+      
+      /* Style for Large Screen */
+      @media (max-width:991px) {
+      .btn-sq-responsive {
+      width: 150px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 150px !important;
+      font-size:18px;
+      }
+      }
+      
+      /* Style for Medium Screen */
+      @media (max-width:767px) {
+      .btn-sq-responsive {
+      width: 100px !important; /* whatever width you want for medium screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 100px !important; /* whatever height you want for medium screen */
+      font-size:12px;
+      }
+      }
+      
+      /* Style for Small Screen */
+      @media (max-width:575px) {
+      .btn-sq-responsive {
+      width: 50px !important; /* whatever width you want for mobile screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 50px !important; /* whatever height you want for mobile screen */
+      font-size:5px;
+      padding: 0px;
+      font-size:7px;
+      }
+      }
+
+
+</style>
+
+<a href="/cc" type="button" class="btn  btn-sq-responsive text-white " style="background-color:hsl(125, 62%, 38%);" ><h5 class="my-4 py-4 text-white" style="font-family:verdana; font-size:100%; ">Cloud Complaints</h5></a>
+<style>
+  @media (max-width:3920px) {
+      .btn-sq-responsive {
+      width: 200px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 200px !important;
+      font-size:24px;
+      }
+      }
+      
+      /* Style for Large Screen */
+      @media (max-width:991px) {
+      .btn-sq-responsive {
+      width: 150px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 150px !important;
+      font-size:18px;
+      }
+      }
+      
+      /* Style for Medium Screen */
+      @media (max-width:767px) {
+      .btn-sq-responsive {
+      width: 100px !important; /* whatever width you want for medium screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 100px !important; /* whatever height you want for medium screen */
+      font-size:12px;
+      }
+      }
+      
+      /* Style for Small Screen */
+      @media (max-width:575px) {
+      .btn-sq-responsive {
+      width: 50px !important; /* whatever width you want for mobile screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 50px !important; /* whatever height you want for mobile screen */
+      font-size:5px;
+      padding: 0px;
+      font-size:7px;
+      }
+      }
+
+
+</style>
+</div>
+
+<div class="container text-center">
+<a href="#" type="button" class="btn btn btn-sq-responsive text-white" style="background-color:SlateBlue;"><h5 class="my-4 py-4 text-white" style="font-family:verdana; font-size:100%; ">Engineer Fresh Joining</h5></a>
+<style>
+
+  
+
+
+
+
+
+
+  @media (max-width:3920px) {
+      .btn-sq-responsive {
+      width: 200px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 200px !important;
+      font-size:24px;
+      }
+      }
+      
+      /* Style for Large Screen */
+      @media (max-width:991px) {
+      .btn-sq-responsive {
+      width: 150px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 150px !important;
+      font-size:18px;
+      }
+      }
+      
+      /* Style for Medium Screen */
+      @media (max-width:767px) {
+      .btn-sq-responsive {
+      width: 100px !important; /* whatever width you want for medium screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 100px !important; /* whatever height you want for medium screen */
+      font-size:12px;
+      }
+      }
+      
+      /* Style for Small Screen */
+      @media (max-width:575px) {
+      .btn-sq-responsive {
+      width: 50px !important; /* whatever width you want for mobile screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 50px !important; /* whatever height you want for mobile screen */
+      font-size:5px;
+      padding: 0px;
+      font-size:7px;
+      }
+      }
+
+
+</style>
+
+<a href="/acs" type="button" class="btn btn-secondary btn-sq-responsive "><h5 class="text-white" style="font-family:verdana; font-size:100%;">Activation &  Configuration Sonic Fiber/GPON Customer</h5></a>
+<style>
+  @media (max-width:3920px) {
+      .btn-sq-responsive {
+      width: 200px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 200px !important;
+      font-size:24px;
+      }
+      }
+      
+      /* Style for Large Screen */
+      @media (max-width:991px) {
+      .btn-sq-responsive {
+      width: 150px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 150px !important;
+      font-size:18px;
+      }
+      }
+      
+      /* Style for Medium Screen */
+      @media (max-width:767px) {
+      .btn-sq-responsive {
+      width: 100px !important; /* whatever width you want for medium screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 100px !important; /* whatever height you want for medium screen */
+      font-size:12px;
+      }
+      }
+      
+      /* Style for Small Screen */
+      @media (max-width:575px) {
+      .btn-sq-responsive {
+      width: 50px !important; /* whatever width you want for mobile screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 50px !important; /* whatever height you want for mobile screen */
+      font-size:5px;
+      padding: 0px;
+      font-size:7px;
+      }
+      }
+
+
+</style>
+
+<a href="/sq" type="button" class="btn btn-sq-responsive text-white" style="background-color:Tomato;" ><h5 class="my-4 text-white" style="font-family:verdana; font-size:100%;">Solution/ Quotation IBU & Corporate Customers</h5></a>
+<style>
+  @media (max-width:3920px) {
+      .btn-sq-responsive {
+      width: 200px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 200px !important;
+      font-size:24px;
+      }
+      }
+      
+      /* Style for Large Screen */
+      @media (max-width:991px) {
+      .btn-sq-responsive {
+      width: 150px !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 150px !important;
+      font-size:18px;
+      }
+      }
+      
+      /* Style for Medium Screen */
+      @media (max-width:767px) {
+      .btn-sq-responsive {
+      width: 100px !important; /* whatever width you want for medium screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 100px !important; /* whatever height you want for medium screen */
+      font-size:12px;
+      }
+      }
+      
+      /* Style for Small Screen */
+      @media (max-width:575px) {
+      .btn-sq-responsive {
+      width: 50px !important; /* whatever width you want for mobile screen */
+      max-width: 100% !important;
+      max-height: 100% !important;
+      height: 50px !important; /* whatever height you want for mobile screen */
+      font-size:5px;
+      padding: 0px;
+      font-size:7px;
+      }
+      }
+
+
+</style>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock body %}
